@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Simple Web Calculator</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="main-body">
+			<!-- Calculator -->
+			<div class="calculator">
+				<div class="display">
+					<input type="text" id="display" disabled placeholder="0" />
+				</div>
+
+				<div id="buttons-container">
+					<div class="function-numbers">
+						<div class="function-container"></div>
+						<div id="numbers-container"></div>
+					</div>
+					<div id="operator-container"></div>
+				</div>
+			</div>
+
+			<!-- History Section -->
+			<div class="history-wrapper">
+				<button id="toggle-history" class="history-btn">></button>
+
+				<div class="history-panel hidden">
+					<h3>History</h3>
+					<ul id="history-list"></ul>
+				</div>
+			</div>
+		</div>
+
+		<script type="module" src="main.js"></script>
+	</body>
+</html>
