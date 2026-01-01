@@ -5,15 +5,16 @@ import { NumberButtons } from "./components/numbers.js";
 import { OperatorButtons } from "./components/operators.js";
 
 // History Panel Toggle
-const toggleHistoryBtn = document.getElementById("toggle-history");
+const toggleBtn = document.getElementById("toggle-history");
 const historyPanel = document.querySelector(".history-panel");
 
-let isHistoryVisible = false;
+toggleBtn.addEventListener("click", () => {
+	const isOpen = !historyPanel.classList.contains("hidden");
 
-toggleHistoryBtn.addEventListener("click", () => {
-	isHistoryVisible = !isHistoryVisible;
-	historyPanel.classList.toggle("hidden", !isHistoryVisible);
-	toggleHistoryBtn.textContent = isHistoryVisible ? "X" : ">";
+	historyPanel.classList.toggle("hidden");
+
+	// sync button state
+	toggleBtn.classList.toggle("open", !isOpen);
 });
 
 // Calculator State
